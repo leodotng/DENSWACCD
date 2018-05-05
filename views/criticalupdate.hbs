@@ -1,0 +1,11 @@
+<a class="nav-back" href="/criticalupdates">back</a>
+<form class="criticalupdates-form" action="/updatecriticalupdate/{{criticalupdate.id}}?_method=PUT" method="post">
+    <div class="item">
+        <label>Critical Updates</label>
+        <input required type="text" name="critdetails" value="{{criticalupdate.critdetails}}">
+    </div>
+    <button class="button" typ="submit">Update</button>
+</form>
+<form class="delete" action="/deletecriticalupdate/{{criticalupdate.id}}?_method=DELETE" method="post">
+<button class="button" type="submit">Delete</button>
+</form>

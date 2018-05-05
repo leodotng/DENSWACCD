@@ -12,6 +12,15 @@ function getCriticalUpdate(id){
     return db('criticalupdates').where('id', id);
 }
 
+function updateCriticalUpdate(id, data) {
+    return db('criticalupdates').where('id', id).update(data);
+}
+
+function deleteCriticalUpdate(id) {
+    return db('criticalupdates').where('id',id).del();
+}
+
+
 function getShiftPassdowns(){
     return db('shiftpassdown').orderBy('shiftpassdetails')
 }
@@ -23,6 +32,8 @@ module.exports = {
     getCriticalUpdates,
     addCriticalUpdate,
     getCriticalUpdate,
+    updateCriticalUpdate,
+    deleteCriticalUpdate,
     getShiftPassdowns,
     getShiftpassdown
 

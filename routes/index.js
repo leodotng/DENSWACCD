@@ -24,12 +24,26 @@ router.post('/addcriticalupdate', function(req, res, next) {
   });
 });
 
-router.get('/criticalupdates/:id', function(req, res, next) {
+router.get('/criticalupdate/:id', function(req, res, next) {
   db.getCriticalUpdate(req.params.id)
-  .then(criticalupdates => {
-    res.render('criticalupdates', {
-      criticalupdates: criticalupdates[0]
+  .then(criticalupdate => {
+    res.render('criticalupdate', {
+      criticalupdate: criticalupdate[0]
     });
+  });
+});
+
+router.put('/updatecriticalupdate/:id', function(req, res, next) {
+  db.updateCriticalUpdate(req.params.id, req.body)
+  .then(data => {
+    res.redirect('/criticalupdates');
+  });
+});
+
+router.delete('/deletecriticalupdate/:id', function(req, res, next) {
+  db.deleteCriticalUpdate(req.params.id)
+  .then(data => {
+    res.redirect('/criticalupdates');
   });
 });
 
