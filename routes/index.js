@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const db = rquire('../db/query');
+const db = require('../db/query');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
