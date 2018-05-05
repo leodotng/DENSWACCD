@@ -1,5 +1,5 @@
 // Update with your config settings.
-// const env = require('dotenv').config()
+require('dotenv').config()
 module.exports = {
 
   development: {
