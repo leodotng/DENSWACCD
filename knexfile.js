@@ -6,7 +6,7 @@ module.exports = {
     client: 'pg',
     connection: {
       localhost: 3000,
-      database: 'swaccd'
+      database: 'denswaccd'
     }
   },
   production: {
