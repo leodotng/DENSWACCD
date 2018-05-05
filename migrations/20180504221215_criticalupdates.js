@@ -2,7 +2,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('criticalupdates', (table) => {
       table.increments();
-      table.timestamps([useTimestamps], [defaultToNow])
+      table.timestamp('created_at').defaultTo(knex.fn.now())
       table.text('critdetails');
 
   })
