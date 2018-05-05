@@ -1,19 +1,16 @@
-require('dotenv').config();
-const environment = process.env.NODE_ENV || 'development'
-const config = require('../knexfile.js')[environment]
-
+// Update with your config settings.
+const env = require('dotenv').config()
 module.exports = {
 
   development: {
     client: 'pg',
     connection: {
       localhost: 3000,
-      database: 'denswaccd'
+      database: 'swaccd'
     }
   },
-
-    production: {
-      client: 'pg',
-      connection: process.env.DATABASE_URL + '?ssl=true'
-    },
-  };
+  production: {
+    client: 'pg',
+    connection: process.env.DATABASE_URL + '?ssl=true'
+  },
+};
