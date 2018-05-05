@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('criticalupdates').insert([
-        {critdetails: 'rowValue1'},
+        {critdetails: 'No PC Air due to high winds'},
       ]);
     });
 };
