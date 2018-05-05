@@ -44,17 +44,6 @@ function deleteShiftPassdown(id) {
 }
 // END FULL CRUD SHIFT PASSDOWNS
 
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
     getCriticalUpdates,
     addCriticalUpdate,
@@ -63,7 +52,7 @@ module.exports = {
     deleteCriticalUpdate,
     getShiftPassdowns,
     addShiftPassdown,
-    getShiftpassdown,
+    getShiftPassdown,
     updateShiftPassdown,
     deleteShiftPassdown
 

@@ -51,12 +51,19 @@ router.delete('/deletecriticalupdate/:id', function(req, res, next) {
 // ==========================================================================================//
 // BEGIN SHIFTPASSDOWN ROUTES
 
-router.get('/shiftpassdown', function(req, res, next) {
+router.get('/shiftpassdowns', function(req, res, next) {
   db.getShiftPassdowns()
-  .then(shiftpassdown => {
-    res.render('shiftpassdown', {
-      shiftpassdown: shiftpassdown
+  .then(shiftpassdowns => {
+    res.render('shiftpassdowns', {
+      shiftpassdowns: shiftpassdowns
     });
+  });
+});
+
+router.post('/addshiftpassdown', function(req, res, next) {
+  db.addShiftPassdown(req.body)
+  .then(data => {
+    res.redirect('/shiftpassdowns');
   });
 });
 
@@ -66,6 +73,20 @@ router.get('/shiftpassdown/:id', function(req, res, next) {
     res.render('shiftpassdown', {
       shiftpassdown: shiftpassdown[0]
     });
+  });
+});
+
+router.put('/updateshiftpassdown/:id', function(req, res, next) {
+  db.updateShiftPassdown(req.params.id, req.body)
+  .then(data => {
+    res.redirect('/shiftpassdowns');
+  });
+});
+
+router.delete('/deleteshiftpassdown/:id', function(req, res, next) {
+  db.deleteShiftPassdown(req.params.id)
+  .then(data => {
+    res.redirect('/shiftpassdowns');
   });
 });
 
