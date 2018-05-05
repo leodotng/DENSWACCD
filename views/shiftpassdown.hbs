@@ -1,8 +1,11 @@
-<a class="nav-back" href="/">back</a>
-<h2>Shift Passdown</h2>
-<div class="shiftpassdown">
-    {{#each shiftpassdown}}
-    {{shiftpassdetails}}
-    {{created_at}}
-    {{/each}}
-</div>
+<a class="nav-back" href="/shiftpassdowns">back</a>
+<form class="shiftpassdowns-form" action="/updateshiftpassdown/{{shiftpassdown.id}}?_method=PUT" method="post">
+    <div class="item">
+        <label>Shift Passdowns</label>
+        <input required type="text" name="shiftpassdetails" value="{{shiftpassdown.shiftpassdetails}}">
+    </div>
+    <button class="button" typ="submit">Update</button>
+</form>
+<form class="delete" action="/deleteshiftpassdown/{{shiftpassdown.id}}?_method=DELETE" method="post">
+<button class="button" type="submit">Delete</button>
+</form>

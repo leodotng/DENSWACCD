@@ -1,0 +1,17 @@
+<a class="nav-back" href="/">back</a>
+<h2>Shift Passdown</h2>
+<div class="shiftpassdown">
+    {{#each shiftpassdown}}
+    {{shiftpassdetails}}
+    <a href="/shiftpassdetail/{{id}}">{{shiftpassdetails}} {{created_at}}</a>
+    {{created_at}}
+    {{/each}}
+</div>
+<h2>Add a Shift Passdown</h2>
+<form class="shiftpassdown-form" action="/addshiftpassdown" method="post">
+    <div class="item">
+        <label class="label">Shift Passdown</label>
+        <input required type="text" name="shiftpassdetails" placeholder="add shift passdown">
+    </div>
+    <button class="button" type="submit">Add Shift Passdown</button>
+</form>
