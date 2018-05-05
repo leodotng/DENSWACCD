@@ -1,7 +1,18 @@
 <a class="nav-back" href="/">back</a>
 <h2>Critical Updates</h2>
 <div class="criticalupdates">
-    {{each criticalupdates}}
-    
+    {{#each criticalupdates}}
+    <a href="/criticalupdates/{{id}}">{{critdetails}} {{created_at}}</a><br>
     {{/each}}
 </div>
+
+
+
+<h2>Add a Critical Update</h2>
+<form class="criticalupdates-form" action="/addcriticalupdate" method="post">
+<div class="item">
+    <label class="label">Critical Update</label>
+    <input required type="text" name="critdetails" placeholder="add criticalupdate">
+</div>
+<button class="button" type="submit">Add Critical Update</button>
+</form>

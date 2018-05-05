@@ -4,6 +4,10 @@ function getCriticalUpdates(){
     return db('criticalupdates').orderBy('critdetails');
 }
 
+function addCriticalUpdate(data){
+    return db('criticalupdates').insert(data);
+}
+
 function getCriticalUpdate(id){
     return db('criticalupdates').where('id', id);
 }
@@ -17,6 +21,7 @@ function getShiftpassdown(id){
 
 module.exports = {
     getCriticalUpdates,
+    addCriticalUpdate,
     getCriticalUpdate,
     getShiftPassdowns,
     getShiftpassdown

@@ -7,12 +7,20 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
+// BEGIN CRITICAL UPDATES ROUTES
 router.get('/criticalupdates', function(req, res, next) {
   db.getCriticalUpdates()
   .then(criticalupdates => {
     res.render('criticalupdates', {
       criticalupdates: criticalupdates
     });
+  });
+});
+
+router.post('/addcriticalupdate', function(req, res, next) {
+  db.addCriticalUpdate(req.body)
+  .then(data => {
+    res.redirect('/criticalupdates');
   });
 });
 
@@ -24,6 +32,10 @@ router.get('/criticalupdates/:id', function(req, res, next) {
     });
   });
 });
+
+// END CRITICAL UPDATES ROUTES
+// ==========================================================================================//
+// BEGIN SHIFTPASSDOWN ROUTES
 
 router.get('/shiftpassdown', function(req, res, next) {
   db.getShiftPassdowns()
@@ -42,5 +54,7 @@ router.get('/shiftpassdown/:id', function(req, res, next) {
     });
   });
 });
+
+// END SHIFTPASSDOWN ROUTES
 
 module.exports = router;
